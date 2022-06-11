@@ -19,7 +19,7 @@ public class Cs04_Pro {
             System.out.print("->\tGoods no."+(i+1)+": ");
             String goods = sc.next();
             ing[i]=goods;
-            System.out.print("->\tPrice no."+(i+1)+": ");
+            System.out.print("->\tPrice($) no."+(i+1)+": ");
             int price = sc.nextInt();
             inp[i]=price;
             System.out.println();
@@ -29,7 +29,7 @@ public class Cs04_Pro {
         System.out.println("\t\t\t\t\t[--Amount of Menu--]\n");
         //Print Menu
         for(int i =0;i<ng;i++) {
-            System.out.println("   "+(i+1)+") " + "Goods: " + ing[i] + ",\tPrice: " + inp[i]);
+            System.out.println("   "+(i+1)+") " + "Goods: " + ing[i] + ",\tPrice($): " + inp[i]);
         }
         System.out.println(" <--------------------------------------------------------->");
 
@@ -39,11 +39,11 @@ public class Cs04_Pro {
         while(true) {
 
             //Looping of order
-            System.out.print("Continue: ");
+            System.out.print("(1)Continue, (other)End \n:");
             int con = sc.nextInt();
             System.out.println("**********");
             if(con!=1){
-                System.out.println("\n\n\t\t\tStop Continue!\n\n\n");
+                System.out.println("\n\n\t\t\tStop Continue! {Please Setup new input}\n\n\n");
                 break;
             }
             while (con == 1) {
@@ -61,24 +61,24 @@ public class Cs04_Pro {
                 System.out.println(" <---=============================--->\n\n");
 
                 //Calculation of all prices
-                System.out.println("Total Price: " + sum);
+                System.out.println("Total Price($): " + sum);
                 System.out.println("*************************");
 
                 //Input money
-                System.out.print("Input Cash: ");
+                System.out.print("Input Cash($): ");
                 int m = sc.nextInt();
 
                 //Check statement
                 if (m >= sum) {
-                    System.out.println("\n\n ----> Change: " + (m - sum));
+                    System.out.println("\n\n ----> Change($): " + (m - sum));
                 } else {
                     System.out.println("\nPlease add more cash to complete your transaction to submit your order! {}Insufficient cash{}");
                     while (sum > m) {
-                        System.out.print("Add More Cash: ");
+                        System.out.print("Add More Cash($): ");
                         int am = sc.nextInt();
                         m += am;
                     }
-                    System.out.println("\n\n ----> Change: " + (m - sum));
+                    System.out.println("\n\n ----> Change($): " + (m - sum));
                 }
 
                 System.out.println(" <================================================================================>");
